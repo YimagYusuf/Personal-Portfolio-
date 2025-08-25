@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projects - Yimag Yusuf</title>
+
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;800&display=swap" rel="stylesheet"/>
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"/>
+
+  <!-- Site styles -->
+  <link rel="stylesheet" href="style.css"/>
+
+  <style>
+    /* Space below fixed nav */
+    #projects { padding-top: 9rem; color: white; max-width: 1000px; margin: 0 auto; display: grid; gap: 2.5rem; }
+    #projects h1, #projects h2 { text-align: center; }
+
+    /* Ensure bullets show even if global ul is flex */
+    .list {
+      display: block;
+      list-style: disc;
+      list-style-position: outside;
+      margin: .5rem 0 1.5rem;
+      padding-left: 1.25rem;
+      line-height: 1.7;
+    }
+    .list li { display: list-item; }
+
+    .section { display: grid; gap: .75rem; }
+    .subhead { font-weight: 700; }
+
+    /* Tech card + gradient badges */
+    .tech-card {
+      border: 2px solid #2a2a2a;
+      border-radius: .9rem;
+      background: var(--second-background);
+      padding: 1.8rem;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    }
+    .tech-list {
+      display: flex; flex-wrap: wrap; gap: .8rem; justify-content: center; margin-top: 1.2rem;
+    }
+    .tech-badge {
+      padding: .5rem 1rem;
+      font-size: .95rem; font-weight: 500; border-radius: .6rem; color: white;
+      background: linear-gradient(to right, #6cff52, #3ec5ff);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .tech-badge:hover { transform: translateY(-3px); box-shadow: 0 4px 12px rgba(0,0,0,0.5); }
+
+    /* If your global CSS sets all spans to gradient/transparent, use this helper */
+    .gradient-text{
+      background: linear-gradient(to right, #6cff52, #3ec5ff);
+      -webkit-background-clip:text; background-clip:text; color:transparent;
+    }
+
+    @media (max-width: 900px){
+      ul.links{ display:none; }
+      #menu{ display:block; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html" class="logo"><span>Yimag Yusuf</span></a>
+    <ul class="links">
+      <a href="index.html#home">Home</a></li>
+      <a href="about.html">About</a></li>
+      <a href="experience.html">Experience</a></li>
+      
+    </ul>
+    <i class='bx bx-menu' id="menu" aria-label="Open menu"></i>
+    <a href="index.html#contact" class="btn">Contact Me</a>
+  </nav>
+
+  <section id="Experience">
+  <!-- Page title -->
+  <header>
+    <h1 style="text-align:center;">
+        <span class="gradient-text">Projects & Experience</span>
+    </h1>
+  </header>
+
+  <!-- Experience -->
+  <div class="section">
+    <h2><span class="gradient-text">Experience</span></h2>
+    <p class="subhead">Software Engineer Intern — USAA</p>
+    <ul class="list">
+      <li>Developed and deployed a full-stack internal tool using React and SpringBoot to add, retrieve, update, and delete partner companies information and securely manage roles across 100k+ companies.</li>
+      <li>Implemented ~5 RESTful APIs using Java to perform CRUD operations with SQL (JDBC) for database integration.</li>
+      <li>Automated CI/CD pipelines with Gitlab, Kubernetes, and Java achieving 95%+ unit & 80%+ mutation test coverage.</li>
+      <li>Reduced reporting time by 40% with JavaScript by implementing a CSV generation of company records.</li>
+      <li>Designed ~7 user friendly pages using JavaScript with proper error handling to reduce data entry errors by 35%.</li>
+      <li>Technologies: Java, JavaScript, SQL, React, Spring Boot, Jest, JUnit, Gitlab, Kubernetes.</li>
+    </ul>
+  </div>
+
+  <!-- Projects -->
+  <div class="section">
+    <h2><span class="gradient-text">Projects</span></h2>
+
+    <p class="subhead">Student Advisor Guidance Engine | JavaScript/Python/AWS/Beautiful Soup/Selenium</p>
+    <ul class="list">
+      <li>Developed SAGE, a full-stack platform serving 25,000+ UT Dallas students, delivering AI-powered academic advising, degree planning, and personalized course and career recommendations.</li>
+      <li>Using Python, Beautiful Soup, and Selenium to build a Web scraper for extracting previous class data from UTD coursebook, UTD grades, and RateMyProfessor data.</li>
+      <li>Integrated AWS S3 for secure, scalable data storage and built an interactive front-end with React and JavaScript.</li>
+    </ul>
+
+    <p class="subhead">Heart Disease Prediction | Python/Pandas/Scikit-learn/Machine Learning</p>
+    <ul class="list">
+      <li>Developed a Heart Disease Prediction Model achieving 99% accuracy using a Random Forest Classifier implemented in Python, leveraging pandas capabilities for data preprocessing and scikit-learn for model training.</li>
+      <li>Analyzed medical datasets of 1,000+ records with pandas to extract 10+ meaningful features for machine learning.</li>
+      <li>Built and validated the model using scikit-learn’s precision score, achieving 98%.</li>
+    </ul>
+
+    <p class="subhead">Flight Planning Application | Python/JavaScript/React/Vite/Flask/REST API</p>
+    <ul class="list">
+      <li>Led a team of 3 to build a full-stack flight planning app with Flask backend integrating a real-time API to retrieve schedules, prices, and durations of flights, using JavaScript, React, and Vite for UI.</li>
+      <li>Developed a Python route optimization algorithm leveraging graph search to recommend the fastest and most cost-efficient flights, improving selection speed by over 60%.</li>
+    </ul>
+  </div>
+
+  <!-- Technologies -->
+  <div class="tech-card">
+    <h2><span class="gradient-text">Technologies</span></h2>
+    <div class="tech-list">
+      <span class="tech-badge">Java</span>
+      <span class="tech-badge">Python</span>
+      <span class="tech-badge">C/C++</span>
+      <span class="tech-badge">JavaScript</span>
+      <span class="tech-badge">React</span>
+      <span class="tech-badge">HTML</span>
+      <span class="tech-badge">CSS</span>
+      <span class="tech-badge"> RESTful APIs</span>
+      <span class="tech-badge">Spring Boot</span>
+      <span class="tech-badge">Flask</span>
+      <span class="tech-badge">SQL / JDBC</span>
+      <span class="tech-badge">AWS</span>
+      <span class="tech-badge">Docker</span>
+      <span class="tech-badge">Kubernetes</span>
+      <span class="tech-badge">Git / CI-CD</span>
+      <span class="tech-badge">Pandas</span>
+      <span class="tech-badge">Scikit-Learn</span>
+      <span class="tech-badge"> Node.js</span>
+      <span class="tech-badge"> Next.js</span>
+      <span class="tech-badge"> Pandas</span>
+    </div>
+  </div>
+</section>
+
+
+  <script>
+    const menu = document.getElementById('menu');
+    const links = document.querySelector('ul.links');
+    menu?.addEventListener('click', () => {
+      const shown = getComputedStyle(links).display !== 'none';
+      links.style.display = shown ? 'none' : 'flex';
+    });
+  </script>
+</body>
+</html>

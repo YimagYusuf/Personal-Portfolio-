@@ -1,101 +1,151 @@
-* {
-  margin: 0; padding: 0; box-sizing: border-box;
-  text-decoration: none; list-style: none;
-  scroll-behavior: smooth; font-family: "Poppins", system-ui, sans-serif;
+/* ====== Reset & base ====== */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  text-decoration:none;
+  scroll-behavior:smooth;
+  font-family:"Poppins", system-ui, sans-serif;
 }
-:root { --background:#181818; --second-background:#151515; }
 
-body { min-height: 100vh; background-color: var(--background); }
-nav{
-  position: fixed; top: 0; width: 100%;
-  padding: 2em 15%;
-  display: flex; align-items: center; justify-content: space-between;
-  background-color: rgba(15,15,15,0.8); backdrop-filter: blur(10px);
-  z-index: 1000;
+:root{
+  --background:#181818;
+  --second-background:#151515;
 }
-ul{ display: flex; align-items: center; gap: 3em; }
-nav ul a{ color:#fff; opacity:.7; transition: opacity .2s ease-in-out; }
+
+body{ min-height:100vh; background:var(--background); color:#fff; }
+
+/* ====== Navbar ====== */
+nav{
+  position:fixed; top:0; width:100%;
+  padding:2em 15%;
+  display:flex; align-items:center; justify-content:space-between;
+  background-color:rgba(15,15,15,0.8); backdrop-filter:blur(10px);
+  z-index:1000;
+}
+
+/* Scope flex to NAV ONLY (so other ULs keep bullets) */
+nav ul{ display:flex; align-items:center; gap:3em; }
+
+nav ul a{ color:#fff; opacity:.7; transition:opacity .2s ease-in-out; font-size: 1.6rem;}
 nav ul a:hover{ opacity:1; }
 
-.logo{ font-size:2em; color:#fff; font-weight:800; opacity:.8; transition: opacity .2s ease-in-out; }
+.logo{ font-size:2em; color:#fff; font-weight:800; opacity:.8; transition:opacity .2s ease-in-out; }
 .logo:hover{ opacity:1; }
-
-.btn{
-  padding:.5em 1em; color:#f5f5f5; font-weight:500; letter-spacing:1px;
-  border-radius:.5em; font-size:1.1em; border:2px solid #fff; cursor:pointer;
-  transition: all .3s ease-in-out; display:inline-block;
-}
-.btn:hover{ background:#fff; color:var(--background); }
-.btn-ghost{ background: transparent; color:#f5f5f5; }
-.btn-ghost:hover{ background:#fff; color:var(--background); }
-
-span{
-  background: linear-gradient(to right, #6cff52, #3ec5ff);
-  -webkit-background-clip:text; background-clip:text; color:transparent;
-}
 
 #menu{ color:#fff; font-size:3em; display:none; cursor:pointer; }
 
-section{ min-height:100vh; padding: 8em 15% 5%; } /* extra top for fixed nav */
+/* ====== Buttons ====== */
+.btn{
+  padding:.5em 1em; color:#f5f5f5; font-weight:500; letter-spacing:1px;
+  border-radius:.5em; font-size:1.1em; border:2px solid #fff; cursor:pointer;
+  transition:all .3s ease-in-out; display:inline-block;
+}
+.btn:hover{ background:#fff; color:var(--background); }
+.btn-ghost{ background:transparent; color:#f5f5f5; }
+.btn-ghost:hover{ background:#fff; color:var(--background); }
+
+/* ====== Headings gradient helper ====== */
+.gradient-text{
+  background:linear-gradient(to right,#6cff52,#3ec5ff);
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+}
+
+/* If you still use plain <span> for gradient text, keep this.
+   Otherwise prefer .gradient-text to avoid side effects. */
+span{
+  background:linear-gradient(to right,#6cff52,#3ec5ff);
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+}
+
+/* ====== Sections ====== */
+section{ min-height:100vh; padding:8em 15% 5%; }
 
 #home{
   display:flex; flex-direction:column; align-items:center; justify-content:center;
   gap:2em; color:#fff; text-align:center;
 }
-#home img{ width:18vw; max-width:240px; border-radius:50%; margin-top:1em; }
+#home img{ width:60vw; max-width:800px; border-radius:50%; margin-top:1em; }
 .info-box{ display:flex; flex-direction:column; gap:.5em; max-width:600px; }
-.info-box h1{ font-size: clamp(2.5rem, 6vw, 5rem); font-weight:700; }
-.info-box h3{ font-size: clamp(1.2rem, 3vw, 2rem); font-weight:400; }
+.info-box h1{ font-size:clamp(2.5rem,6vw,5rem); font-weight:700; }
+.info-box h3{ font-size:clamp(1.2rem,3vw,2rem); font-weight:400; }
 .info-box p{ opacity:.8; }
 
 .btn-box{ display:flex; gap:1em; }
 
-::-webkit-scrollbar{ width: 12px; background: var(--background); }
-::-webkit-scrollbar-thumb{ background: linear-gradient(to bottom, #6cff52, #3ec5ff); border-radius: 8px; }
+/* ====== About page helpers ====== */
+#about p{ margin-bottom:2rem; line-height:1.7; }
 
-/* Simple responsiveness */
-@media (max-width: 900px){
+.job{ margin-bottom:2rem; }
+
+/* Restore bullets for job lists */
+.job ul{
+  display:block;
+  list-style:disc;
+  list-style-position:outside;
+  margin:.5rem 0 2rem;
+  padding-left:1.5rem;
+  line-height:1.7;
+}
+.job ul li{ display:list-item; }
+.job ul li::marker{ color:#fff; }
+
+/* ====== Projects page generic list (use class="list") ====== */
+.list{
+  display:block;
+  list-style:disc;
+  list-style-position:outside;
+  margin:.5rem 0 2rem;
+  padding-left:1.5rem;
+  line-height:1.7;
+}
+.list li{ display:list-item; }
+.list li::marker{ color:#fff; }
+
+/* ====== Tech card + badges ====== */
+.tech-card{
+  border:2px solid #2a2a2a;
+  border-radius:.9rem;
+  background:var(--second-background);
+  padding:1.8rem;
+  text-align:center;
+  box-shadow:0 4px 12px rgba(0,0,0,0.4);
+}
+.tech-list{
+  display:flex; flex-wrap:wrap; gap:.8rem; justify-content:center; margin-top:1.2rem;
+}
+.tech-badge{
+  padding:.5rem 1rem;
+  font-size:.95rem; font-weight:500; border-radius:.6rem;
+  color:#fff;
+  background:linear-gradient(to right,#6cff52,#3ec5ff);
+  box-shadow:0 2px 6px rgba(0,0,0,0.3);
+  transition:transform .2s ease, box-shadow .2s ease;
+}
+.tech-badge:hover{ transform:translateY(-3px); box-shadow:0 4px 12px rgba(0,0,0,0.5); }
+
+/* If you still have non-badge spans inheriting gradient,
+   make sure badge text stays visible */
+.tech-list .tech-badge{
+  -webkit-background-clip:initial; background-clip:initial; color:#fff;
+}
+
+/* ====== Gallery ====== */
+.grid-photos{ display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1rem; }
+figure{ text-align:center; }
+figure img{ width:100%; border-radius:.7rem; }
+figure figcaption{ margin-top:.5rem; opacity:.75; font-size:.95rem; }
+
+/* ====== Scrollbar ====== */
+::-webkit-scrollbar{ width:12px; background:var(--background); }
+::-webkit-scrollbar-thumb{
+  background:linear-gradient(to bottom,#6cff52,#3ec5ff);
+  border-radius:8px;
+}
+
+/* ====== Responsive ====== */
+@media (max-width:900px){
   ul.links{ display:none; }
   #menu{ display:block; }
   #home img{ width:35vw; }
-}
-
-#about p {
-  margin-bottom: 2rem;   /* bigger space between job blocks */
-  line-height: 1.7;      /* minor space between sentences */
-}
-
-.job ul { 
-  display: block;
-  margin: .5rem 0 2rem;
-  padding-left: 1.25rem;
-}
-
-.job ul li {
-  display: list-item;              /* ensure it’s a list item */
-  list-style-type: disc;           /* bullets! */
-  list-style-position: outside;
-}
-
-/* optional: make bullets visible if your text color changes */
-.job ul li::marker { color: #fff; }
-
-.experience-label {
-  text-align: center;
-  margin: 3rem 0 1rem; /* space above and below */
-}
-
-.experience-label h2 {
-  font-size: 2rem;
-  font-weight: 700;
-}
-
-.leadership-label {
-  text-align: center;
-  margin: 3rem 0 1rem;
-}
-
-.leadership-label h2 {
-  font-size: 2rem;
-  font-weight: 700;
 }

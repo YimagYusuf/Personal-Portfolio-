@@ -16,7 +16,7 @@
     <a href="#" class="logo"><span>Yimag Yusuf</span></a>
 
     <ul class="links">
-      <a href="#home">Home</a></li>
+      <a href="#home"class="active">Home</a></li>
       <a href="about.html">About</a>
       <a href="experience.html">Experience</a></li>
       
@@ -44,30 +44,12 @@
   </section>
 
   <script>
-    // highlight active nav link by URL
-    (function highlightActiveNav(){
-      const links = document.querySelectorAll('nav .links a');
-      const path  = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
-      const hash  = location.hash; // e.g., #contact
-
-      links.forEach(a => {
-        a.classList.remove('active');
-        const href = a.getAttribute('href').toLowerCase();
-
-        // match current page (index.html, about.html, experience.html, projects.html, contact.html)
-        const isSamePage =
-          href === path ||
-          href.endsWith('/' + path) ||
-          // allow root "index.html#home" style links
-          (path === 'index.html' && (href === 'index.html#home' || href === '#home'));
-
-        // also match hash-only links when you're on index.html
-        const isSameHashOnIndex =
-          path === 'index.html' && hash && (href === hash || href === 'index.html' + hash);
-
-        if (isSamePage || isSameHashOnIndex) a.classList.add('active');
-      });
-    })();
+    const menu = document.getElementById('menu');
+    const links = document.querySelector('ul.links');
+    menu?.addEventListener('click', () => {
+      const shown = getComputedStyle(links).display !== 'none';
+      links.style.display = shown ? 'none' : 'flex';
+    });
   </script>
 
 </body>

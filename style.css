@@ -44,6 +44,24 @@ nav ul a.active::after {
   background: linear-gradient(to right, #6cff52, #3ec5ff);
 }
 
+/* Active link underline */
+nav ul a.active,
+nav a.btn.active {
+  position: relative;
+  opacity: 1;
+  font-weight: 600;
+}
+
+/* Gradient underline for active links & button */
+nav ul a.active::after,
+nav a.btn.active::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: -20px;
+  height: 3px;
+  border-radius: 2px;
+  background: linear-gradient(to right, #6cff52, #3ec5ff);
+}
 
 .logo{ font-size:2em; color:#fff; font-weight:800; opacity:.8; transition:opacity .2s ease-in-out; }
 .logo:hover{ opacity:1; }

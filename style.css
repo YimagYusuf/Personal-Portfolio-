@@ -149,3 +149,46 @@ figure figcaption{ margin-top:.5rem; opacity:.75; font-size:.95rem; }
   #menu{ display:block; }
   #home img{ width:35vw; }
 }
+
+#experience {
+  padding-top: 10rem;
+  color: white;
+}
+
+.exp-wrap {
+  max-width: 1100px;   /* same as about page */
+  margin: 0 auto;
+  display: grid;
+  gap: 2.5rem;
+  padding: 0 2rem;     /* add side padding for breathing room */
+}
+
+/* Contact page: override global section padding */
+#contact {
+  /* kill any old width limits */
+  max-width: none;     
+  /* replace the 15% side padding with a smaller, responsive value */
+  padding: 9rem clamp(16px, 5vw, 64px) 4rem;
+}
+
+/* Center and control content width like About */
+.contact-wrap {
+  max-width: 1100px;   /* or 1200px if you want wider */
+  width: 100%;
+  margin: 0 auto;
+  display: grid;
+  gap: 2rem;
+  padding: 0 1rem;     /* light inner padding */
+}
+
+/* Make the info + form sit side-by-side on larger screens */
+.contact-grid { grid-template-columns: 1fr; }
+
+.contact-form .btn {
+  background: linear-gradient(to right, #6cff52, #3ec5ff);
+  color: #181818;      /* dark text */
+  border: none;
+}
+.contact-form .btn:hover {
+  opacity: 0.85;
+}

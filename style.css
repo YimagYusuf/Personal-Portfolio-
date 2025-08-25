@@ -192,3 +192,7 @@ figure figcaption{ margin-top:.5rem; opacity:.75; font-size:.95rem; }
 .contact-form .btn:hover {
   opacity: 0.85;
 }
+
+html {
+  scrollbar-gutter: stable;         /* or: stable both-edges */
+}

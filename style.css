@@ -196,3 +196,20 @@ figure figcaption{ margin-top:.5rem; opacity:.75; font-size:.95rem; }
 html {
   scrollbar-gutter: stable;         /* or: stable both-edges */
 }
+
+/* Ultra-tight spacing for About page */
+#about .job {
+  margin-bottom: 0.25rem;   /* very small gap */
+}
+
+#about .job p {
+  margin-bottom: 0.1rem;    /* almost no gap under titles */
+}
+
+#about .job ul {
+  margin: 0.25rem 0 0.25rem 1.25rem;  /* keep bullets aligned, tiny vertical space */
+}
+
+#about .leadership-label {
+  margin: 0.5rem 0 0.25rem; /* much closer to Experience */
+}

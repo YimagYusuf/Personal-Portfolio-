@@ -59,3 +59,43 @@ section{ min-height:100vh; padding: 8em 15% 5%; } /* extra top for fixed nav */
   #menu{ display:block; }
   #home img{ width:35vw; }
 }
+
+#about p {
+  margin-bottom: 2rem;   /* bigger space between job blocks */
+  line-height: 1.7;      /* minor space between sentences */
+}
+
+.job ul { 
+  display: block;
+  margin: .5rem 0 2rem;
+  padding-left: 1.25rem;
+}
+
+.job ul li {
+  display: list-item;              /* ensure it’s a list item */
+  list-style-type: disc;           /* bullets! */
+  list-style-position: outside;
+}
+
+/* optional: make bullets visible if your text color changes */
+.job ul li::marker { color: #fff; }
+
+.experience-label {
+  text-align: center;
+  margin: 3rem 0 1rem; /* space above and below */
+}
+
+.experience-label h2 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.leadership-label {
+  text-align: center;
+  margin: 3rem 0 1rem;
+}
+
+.leadership-label h2 {
+  font-size: 2rem;
+  font-weight: 700;
+}

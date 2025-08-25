@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About - Yimag Yusuf</title>
+
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;800&display=swap" rel="stylesheet"/>
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"/>
+
+  <!-- Main site styles -->
+  <link rel="stylesheet" href="style.css"/>
+
+  <!-- Page-specific tweaks (keeps your global colorway) -->
+  <style>
+    /* Extra top padding because nav is fixed */
+    #about { padding-top: 10rem; color: white; }
+    .about-wrap { max-width: 1100px; margin: 0 auto; display: grid; gap: 2.5rem; }
+
+    .lead { text-align: center; display: grid; gap: 1rem; }
+    .lead h1 { font-size: clamp(2.2rem, 5vw, 3.2rem); }
+    .lead p { opacity: .85; max-width: 820px; margin: 0 auto; }
+
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem; }
+    .card { border: 2px solid #2a2a2a; border-radius: .9rem; padding: 1.1rem 1.2rem; background: var(--second-background); }
+    .card h3 { margin-bottom: .6rem; }
+
+    .badge-row { display: flex; flex-wrap: wrap; gap: .6rem; }
+    .badge {
+      border: 1.5px solid #3a3a3a; border-radius: .6rem; padding: .35rem .6rem; font-size: .95rem; opacity: .9;
+    }
+
+    .gallery { display: grid; gap: 1.25rem; }
+    .gallery h2 { text-align: center; font-size: clamp(1.4rem, 3vw, 2rem); }
+    .grid-photos { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
+
+    figure {
+      border: 2px dashed #2a2a2a; border-radius: .9rem; min-height: 180px;
+      display: grid; place-items: center; padding: .75rem; background: rgba(255,255,255,0.02);
+      text-align: center;
+    }
+    figure img { width: 100%; height: 100%; object-fit: cover; border-radius: .7rem; display: none; }
+    figure figcaption { opacity: .75; font-size: .95rem; }
+
+    .cta { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+    @media (max-width: 900px){
+      ul.links{ display:none; }
+      #menu{ display:block; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Nav (reuses your global styles) -->
+  <nav>
+    <a href="index.html" class="logo"><span>Yimag Yusuf</span></a>
+    <ul class="links">
+      <li><a href="index.html#home">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="index.html#services">Services</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+    <i class='bx bx-menu' id="menu" aria-label="Open menu"></i>
+    <a href="index.html#contact" class="btn">Contact Me</a>
+  </nav>
+
+  <section id="about">
+    <div class="about-wrap">
+      <!-- Lead -->
+      <div class="lead">
+        <h1>About <span>Me</span></h1>
+        <p>
+          I’m <span>Yimag Yusuf</span> a Dallas-based developer who loves full-stack work, and innovating impactful technologies that actually help people.
+          Off the keyboard, I’m a big anime fan with some of my favorites below (Dragon Ball Z, Naruto, and One Piece). I also am a really big Basketball Fan with my favorite player of all time being Kevin Durant. 
+          Here you’ll find a bit about who I am, what I enjoy, and the technologies I use.
+        </p>
+      </div>
+
+      <!-- Photo gallery placeholders -->
+      <div class="gallery">
+        <h2><span>Photo Gallery</h2></span>
+
+        <h3 style="margin-top:.6rem;">Anime </h3>
+        <div class="grid-photos">
+        <figure>
+            <img src="images/Goku.webp" alt="Goku from Dragon Ball Z" style="display:block">
+            <figcaption>Dragon Ball Z — Goku</figcaption>
+        </figure>
+        <figure>
+            <img src="images/Naruto.webp" alt="Naruto Uzumaki" style="display:block">
+            <figcaption>Naruto</figcaption>
+        </figure>
+        <figure>
+            <img src="images/Luffy.jpg" alt="Monkey D. Luffy from One Piece" style="display:block">
+            <figcaption>One Piece — Luffy</figcaption>
+        </figure>
+        </div>
+
+        <h3 style="margin-top:1rem;">Basketball</h3>
+        <div class="grid-photos">
+        <figure>
+            <img src="images/KD_Photo.webp" alt="Kevin Durant" style="display:block">
+            <figcaption>Kevin Durant</figcaption>
+        </figure>
+        <figure>
+            <img src="images/KD_Bron_Steph.jpg" alt="Kevin Durant, LeBron James, and Stephen Curry" style="display:block">
+            <figcaption>KD, LeBron & Steph</figcaption>
+        </figure>
+        </div>
+      </div>
+
+      
+
+      <!-- Personal & broad technical -->
+      <div class="cards">
+        <article class="card">
+          <h3><span>Who I am</span></h3>
+          <p style="opacity:.9">
+            Curious, collaborative, and hands-on. I like turning ideas into polished products and learning by building.
+            I enjoy pair programming, clear communication, and moving fast with intention.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3><span>What I enjoy</span></h3>
+          <ul style="opacity:.9; line-height:1.8; list-style: disc; margin-left: 1.1rem;">
+            <li>Full-stack development (front-end polish + back-end reliability)</li>
+            <li>Clean component design and pragmatic APIs</li>
+            <li>Learning, shipping, and iterating with users in the loop</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3><span>Technologies I use</span></h3>
+          <div class="badge-row">
+            <span class="badge">JavaScript</span>
+            <span class="badge">Java</span>
+            <span class="badge">Python</span>
+            <span class="badge">C/C++</span>
+            <span class="badge">React</span>
+            <span class="badge">Spring Boot</span>
+            <span class="badge">Flask</span>
+            <span class="badge">SQL / JDBC</span>
+            <span class="badge">Git & CI/CD</span>
+            <span class="badge">AWS</span>
+            <span class="badge">Docker/K8s</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3><span>Previous roles</span></h3>
+          <ul style="opacity:.9; line-height:1.8; list-style: disc; margin-left: 1.1rem;">
+            <li>Software Engineer Intern — USAA (full-stack tool, APIs, CI/CD)</li>
+            <li>Project work — SAGE (AI advising), ML apps, systems & DB projects</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3><span>Fandoms</span></h3>
+          <ul style="opacity:.9; line-height:1.8; list-style: disc; margin-left: 1.1rem;">
+            <li>Anime: Dragon Ball Z, Naruto, One Piece</li>
+            <li>NBA: Kevin Durant (also love KD/Bron/Steph eras)</li>
+          </ul>
+        </article>
+      </div>
+
+      
+  </section>
+
+  <script>
+    // Mobile menu toggle (uses your existing IDs/classes)
+    const menu = document.getElementById('menu');
+    const links = document.querySelector('ul.links');
+    menu?.addEventListener('click', () => {
+      const shown = getComputedStyle(links).display !== 'none';
+      links.style.display = shown ? 'none' : 'flex';
+    });
+  </script>
+</body>
+</html>
